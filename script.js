@@ -50,16 +50,16 @@ document.addEventListener('pointermove',function(e){$$('.card,.pj').forEach(func
 function scene(){var T=window.THREE;if(!T||rm)return;var r=new T.WebGLRenderer({alpha:true,antialias:true});r.setPixelRatio(Math.min(devicePixelRatio,2));r.setSize(innerWidth,innerHeight);var cv=r.domElement;cv.style.cssText='position:fixed;inset:0;z-index:-1;pointer-events:none';document.body.prepend(cv);
 var s=new T.Scene(),cam=new T.PerspectiveCamera(55,innerWidth/innerHeight,.1,100);cam.position.z=9;var g=new T.Group();s.add(g);
 var M=function(c,o){return new T.MeshBasicMaterial({color:c,wireframe:true,transparent:true,opacity:o})};
-var ico=new T.Mesh(new T.IcosahedronGeometry(2.4,1),M(0x6f8cff,.55)),core=new T.Mesh(new T.IcosahedronGeometry(1.3,0),M(0xff5fd0,.75));g.add(ico,core);
-var rings=[0,1,2].map(function(i){var m=new T.Mesh(new T.TorusGeometry(3.3+i*.7,.014,8,160),new T.MeshBasicMaterial({color:i?0xffb347:0x5ce1ff,transparent:true,opacity:.65}));m.rotation.set(1+i,i*.8,0);g.add(m);return m});
+var ico=new T.Mesh(new T.IcosahedronGeometry(2.4,1),M(0xc9a96a,.38)),core=new T.Mesh(new T.IcosahedronGeometry(1.3,0),M(0xe8cf9a,.5));g.add(ico,core);
+var rings=[0,1,2].map(function(i){var m=new T.Mesh(new T.TorusGeometry(3.3+i*.7,.014,8,160),new T.MeshBasicMaterial({color:i?0xb08a4e:0xd8b878,transparent:true,opacity:.4}));m.rotation.set(1+i,i*.8,0);g.add(m);return m});
 var N=innerWidth<700?600:1800,P=new Float32Array(N*3);for(var i=0;i<N;i++){var d=6+Math.random()*16,a=Math.random()*6.283,b=Math.acos(2*Math.random()-1);P[i*3]=d*Math.sin(b)*Math.cos(a);P[i*3+1]=d*Math.sin(b)*Math.sin(a);P[i*3+2]=d*Math.cos(b)}
-var pg=new T.BufferGeometry();pg.setAttribute('position',new T.BufferAttribute(P,3));var pm=new T.PointsMaterial({size:.05,color:0x9fb4ff,transparent:true,opacity:.9,blending:T.AdditiveBlending,depthWrite:false}),pts=new T.Points(pg,pm);s.add(pts);
+var pg=new T.BufferGeometry();pg.setAttribute('position',new T.BufferAttribute(P,3));var pm=new T.PointsMaterial({size:.035,color:0xe8d5a8,transparent:true,opacity:.7,blending:T.AdditiveBlending,depthWrite:false}),pts=new T.Points(pg,pm);s.add(pts);
 addEventListener('resize',function(){r.setSize(innerWidth,innerHeight);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix()});
 (function A(){var t=performance.now()/1000,p=mx()>0?scrollY/mx():0,wide=innerWidth>860;
 g.rotation.y=t*.15+p*6;g.rotation.x=t*.08+py*.6;ico.rotation.z=t*.1;core.rotation.y=-t*.4;core.scale.setScalar(1+Math.sin(t*2)*.08);
 rings.forEach(function(m,i){m.rotation.x+=.003*(i+1);m.rotation.y+=.002*(3-i)});
 g.position.x=Math.cos(p*Math.PI*2.4)*(wide?3:0);g.position.y=Math.sin(p*Math.PI*3)*.8;
 cam.position.z=9-p*3.5;cam.position.x+=(px*2-cam.position.x)*.05;cam.position.y+=(-py*1.5-cam.position.y)*.05;cam.lookAt(0,0,0);pts.rotation.y=t*.02+p*1.5;
-var h=(.62+p*.45)%1;ico.material.color.setHSL(h,.9,.66);core.material.color.setHSL((h+.35)%1,.9,.65);pm.color.setHSL(h,.7,.75);document.documentElement.style.setProperty('--hue',Math.round(h*360));
+var h=.115-p*.06;ico.material.color.setHSL(h,.5,.62);core.material.color.setHSL(h+.02,.55,.72);pm.color.setHSL(h,.45,.8);document.documentElement.style.setProperty('--hue',Math.round(h*360));
 r.render(s,cam);requestAnimationFrame(A)})()}
 if(!rm){var sc=document.createElement('script');sc.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';sc.onload=scene;document.head.appendChild(sc)}

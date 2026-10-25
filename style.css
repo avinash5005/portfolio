@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
 :root{--wall:#eef2f8;--ink:#0a1736;--mut:#4d5a78;--cob:#2f5bff;--wood:#c98a3d;--navy:#0a1736;--card:#fff;--line:#d5ddeb;--ease:cubic-bezier(.16,1,.3,1);--ff:'Figtree',system-ui,sans-serif;--fd:'Bricolage Grotesque','Arial Black',sans-serif}
 *,*::before,*::after{box-sizing:border-box}
 html{background:var(--wall)}
@@ -145,3 +146,48 @@ h1 .w>i{background:linear-gradient(100deg,#fff 10%,#9fb4ff 40%,#ff7ad9 68%,#ffb3
 .cta .btn{background:#fff;color:#0a1040;animation:none}
 input,textarea{background:rgba(255,255,255,.06);color:#fff;border-color:var(--line)}
 .mail{border-bottom-color:#c65bff}
+
+/* ===== LUXURY OVERRIDE: warm black, champagne gold, ivory ===== */
+:root{--wall:#0b0a09;--ink:#f3ecdf;--mut:#a89f8f;--cob:#d8b878;--wood:#b08a4e;--card:rgba(255,255,255,.03);--line:rgba(216,184,120,.22);--fd:'Cormorant Garamond','Playfair Display',Georgia,serif;--hue:38}
+html{background:#0b0a09}
+::selection{background:#d8b878;color:#17120a}
+body::before{background:radial-gradient(60vmax 60vmax at 88% 4%,rgba(216,184,120,.13),transparent 60%),radial-gradient(55vmax 55vmax at 4% 96%,rgba(130,78,44,.2),transparent 60%)}
+h1,h2,h3{font-weight:600;letter-spacing:-.015em;line-height:1}
+h1{font-size:clamp(3.4rem,10.5vw,9.4rem)}
+h2{font-size:clamp(2.8rem,6.8vw,5.8rem)}
+h3{font-size:2rem;letter-spacing:-.01em}
+.big{font-weight:600;font-size:clamp(2.2rem,5vw,4.4rem);line-height:1.08;max-width:22ch}
+summary{font-weight:600;font-size:1.9rem}
+.tl b{font-weight:600;font-size:2rem}.tl em{font-weight:600;font-size:2.8rem}
+.stats b{font-weight:600;font-size:clamp(3.4rem,7vw,6rem)}
+.q{font-weight:600;font-size:1.7rem;line-height:1.2}
+.mail{font-weight:600}
+.bar{background:linear-gradient(90deg,#8a6a38,#f0d9a3)}
+.dk{background:rgba(22,18,14,.72)}
+.curtain{background:#0b0a09}
+.cur{border-color:#d8b878}.cur.big{background:rgba(216,184,120,.14)}
+nav{background:rgba(14,12,10,.72);border-color:var(--line)}
+nav .brand{font-weight:700;font-size:1.5rem;letter-spacing:0}
+nav .links a{color:#b9ad98}nav .links a:hover{color:#fff}
+nav .links a[aria-current]{background:#d8b878;color:#17120a;box-shadow:none}
+.kick{font:italic 600 1.25rem var(--fd);text-shadow:none;color:#d8b878}
+h1 .w>i{background:linear-gradient(180deg,#fbf4e6 30%,#d8b878);-webkit-background-clip:text;background-clip:text;color:transparent;animation:none}
+.btn.p{background:#d8b878;color:#17120a;border-color:#d8b878;box-shadow:none;animation:none}
+.btn.p:hover{background:#f0d9a3;border-color:#f0d9a3}
+.btn.g{border-color:rgba(243,236,223,.5);color:#f3ecdf}
+.card,.pj{background:radial-gradient(420px circle at var(--gx,50%) var(--gy,0%),rgba(216,184,120,.14),transparent 60%),rgba(255,255,255,.03)}
+.pj{border:1px solid var(--line);box-shadow:0 30px 70px -30px rgba(0,0,0,.85);color:#f3ecdf}
+.pj:nth-child(1){background:linear-gradient(145deg,#1f1810,#3d2e17)}.pj:nth-child(2){background:linear-gradient(145deg,#2a1b14,#5c3b22)}.pj:nth-child(3){background:linear-gradient(145deg,#14120e,#42361f)}.pj:nth-child(4){background:linear-gradient(145deg,#241a12,#6b5230)}
+.pj::before{color:#d8b878;opacity:.1}.pj p{color:#cfc4b0}.pj .tags span{border-color:rgba(216,184,120,.45);color:#d8b878}
+.card:hover{box-shadow:0 30px 60px -30px rgba(216,184,120,.4);border-color:#d8b878}
+.pcard .rv{box-shadow:0 40px 90px -20px rgba(0,0,0,.85)}
+.pcard::before{border-color:#d8b878;box-shadow:none}
+.pcard::after{background:linear-gradient(135deg,#d8b878,#7a5a2c);filter:none}
+.chip{background:rgba(16,13,10,.82);color:#f3ecdf;border:1px solid var(--line);box-shadow:0 18px 40px -16px #000}
+.mq div{-webkit-text-stroke:1.5px #c9a96a;filter:none;font-weight:600}
+.mq span:nth-child(even){color:#d8b878}
+.stats div{border-image:linear-gradient(90deg,#d8b878,transparent) 1}
+.stats b,.tl em{background:linear-gradient(180deg,#f6e8c4,#c9a96a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cta .btn{background:#d8b878;color:#17120a;border-color:#d8b878}
+.mail{border-bottom-color:#d8b878}
+input,textarea{background:rgba(255,255,255,.04);color:#f3ecdf}
